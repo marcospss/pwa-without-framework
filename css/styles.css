@@ -1,0 +1,114 @@
+/*
+# GLOBAL
+*/
+.mt-40 {
+  margin-top: 40px;
+}
+.ml-40 {
+  margin-left: 40px;
+}
+/*
+# NAV
+*/
+nav .brand-logo {
+  font-size: 1.2rem;
+}
+
+/*
+# DETAILS
+*/
+.details {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+}
+.details .header {
+  padding: 0;
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+}
+
+.details .header figure {
+  margin: 0;
+}
+
+.details .header img {
+  width: 100%;
+}
+
+.details .header .title {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  text-align: right;
+  background-color: #ffffff7a;
+}
+
+.details .description {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/*
+# RECOMMENDATIONS
+*/
+.recommendations {
+  margin-bottom: 40px;
+  padding: 1rem 1.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+}
+
+.recommendations .title {
+  width: 100%;
+  margin: 0;
+  font-size: 2rem;
+  padding-top: 1.5rem;
+}
+
+.recommendations .card-title {
+  font-size: 1rem;
+  line-height: 1.5rem !important;
+  font-weight: bold;
+}
+
+/*
+# DISCOVER
+*/
+.discover {
+  border-radius: 1rem;
+  overflow: hidden;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.discover form {
+  margin-top: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.discover form label {
+  font-weight: bold;
+}
+.discover form .btn-trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.discover .results {
+  padding: 1.5rem;
+}
+
+.discover .results .card-title {
+  font-size: 1rem;
+  line-height: 1.5rem !important;
+  font-weight: bold;
+}
