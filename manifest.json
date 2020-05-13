@@ -2,12 +2,14 @@
     "name": "The Movie Database (TMDb)",
     "short_name": "MovieDatabase",
     "start_url": "/index.html",
-    "scope": "/index.html",
+    "scope": ".",
     "display": "standalone",
     "background_color": "#081b23",
     "theme_color": "#212121",
     "description" : "The Movie Database (TMDb) is a popular, user editable database for movies and TV shows.",
     "orientation": "portrait-primary",
+    "dir": "ltr",
+    "lang": "en-US",
     "icons": [
       {
         "src": "/images/icons/icon-72x72.png",
