@@ -1,16 +1,18 @@
-const CACHE_STATIC_NAME = 'static-v2';
-const CACHE_DYNAMIC_NAME = 'dynamic-v2';
+const VERSION = 'v1'
+const CACHE_STATIC_NAME = `static-${VERSION}`;
+const CACHE_DYNAMIC_NAME = `dynamic-${VERSION}`;
 const CACHE_SIZE = 50;
+const OFFLINE_URL = '/offline.html';
 const assets = [
   '/',
   '/index.html',
+  '/offline.html',
   '/js/app.js',
   '/js/bannerInstall.js',
   '/js/materialize.min.js',
   '/css/styles.css',
   '/css/materialize.min.css',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
-  '/fallback.html',
 ];
 
 // cache size limit function
@@ -23,48 +25,51 @@ const limitCacheSize = (name, size) => {
     });
   });
 };
-
+// https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook?hl=pt-br
+// https://developer.mozilla.org/pt-BR/docs/Web/API/Service_Worker_API/Using_Service_Workers
 // install event
-self.addEventListener('install', evt => {
-  //console.log('service worker installed');
-  evt.waitUntil(
-    caches.open(CACHE_STATIC_NAME).then((cache) => {
-      console.log('caching shell assets');
-      cache.addAll(assets);
-    })
-  );
+self.addEventListener('install', (event) => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_STATIC_NAME);
+    await cache.addAll(assets);
+  })());
 });
 
 // activate event
-self.addEventListener('activate', evt => {
-  //console.log('service worker activated');
-  evt.waitUntil(
-    caches.keys().then(keys => {
-      //console.log(keys);
-      return Promise.all(keys
-        .filter(key => key !== CACHE_STATIC_NAME && key !== CACHE_DYNAMIC_NAME)
-        .map(key => caches.delete(key))
-      );
-    })
-  );
+self.addEventListener('activate', (event) => {
+  event.waitUntil((async () => {
+    // Enable navigation preload if it's supported.
+    // See https://developers.google.com/web/updates/2017/02/navigation-preload
+    if ('navigationPreload' in self.registration) {
+      await self.registration.navigationPreload.enable();
+    }
+    const keysCache = await caches.keys();
+    return Promise.all(keysCache
+      .filter(key => key !== CACHE_STATIC_NAME && key !== CACHE_DYNAMIC_NAME)
+      .map(key => caches.delete(key))
+    );
+  })());
+
+  // Tell the active service worker to take control of the page immediately.
+  self.clients.claim();
 });
 
 // fetch events
-self.addEventListener('fetch', evt => {
-  evt.respondWith(
-    caches.match(evt.request).then(cacheRes => {
-      return cacheRes || fetch(evt.request).then(fetchRes => {
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(cacheRes => {
+      return cacheRes || fetch(event.request).then(fetchRes => {
         return caches.open(CACHE_DYNAMIC_NAME).then(cache => {
-          cache.put(evt.request.url, fetchRes.clone());
+          cache.put(event.request.url, fetchRes.clone());
           // check cached items size
           limitCacheSize(CACHE_DYNAMIC_NAME, CACHE_SIZE);
           return fetchRes;
         })
       });
-    }).catch(() => {
-      // if(evt.request.url.indexOf('.html') > -1){
-        return caches.match('/fallback.html');
-      // } 
+    }).catch(async () => {
+      const cache = await caches.open(CACHE_STATIC_NAME);
+      const cachedResponse = await cache.match(OFFLINE_URL);
+      return cachedResponse;
     })
   );
 });

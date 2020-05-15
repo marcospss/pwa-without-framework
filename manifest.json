@@ -2,7 +2,7 @@
     "name": "The Movie Database (TMDb)",
     "short_name": "MovieDatabase",
     "start_url": "/index.html",
-    "scope": ".",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#081b23",
     "theme_color": "#212121",
