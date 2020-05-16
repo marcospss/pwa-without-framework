@@ -1,7 +1,7 @@
-const VERSION = 'v1'
+const VERSION = 'v-01';
 const CACHE_STATIC_NAME = `static-${VERSION}`;
 const CACHE_DYNAMIC_NAME = `dynamic-${VERSION}`;
-const CACHE_SIZE = 50;
+const CACHE_SIZE = 1000;
 const OFFLINE_URL = '/offline.html';
 const assets = [
   '/',
@@ -55,12 +55,12 @@ self.addEventListener('activate', (event) => {
 });
 
 // fetch events
-self.addEventListener('fetch', event => {
+self.addEventListener('fetch', async (event) => {
   event.respondWith(
     caches.match(event.request).then(cacheRes => {
       return cacheRes || fetch(event.request).then(fetchRes => {
         return caches.open(CACHE_DYNAMIC_NAME).then(cache => {
-          cache.put(event.request.url, fetchRes.clone());
+          cache.put(event.request.url, fetchRes.clone())
           // check cached items size
           limitCacheSize(CACHE_DYNAMIC_NAME, CACHE_SIZE);
           return fetchRes;
