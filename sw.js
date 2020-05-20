@@ -1,4 +1,4 @@
-const VERSION = 'v-01';
+const VERSION = 'v-02';
 const CACHE_STATIC_NAME = `static-${VERSION}`;
 const CACHE_DYNAMIC_NAME = `dynamic-${VERSION}`;
 const CACHE_SIZE = 1000;
@@ -7,8 +7,12 @@ const STATIC_FILES = [
   '/',
   '/index.html',
   '/offline.html',
+  '/js/utils.js',
   '/js/app.js',
   '/js/bannerInstall.js',
+  '/services/common.js',
+  '/services/movies.js',
+  '/settings/api.js',
   '/js/materialize.min.js',
   '/css/styles.css',
   '/css/materialize.min.css',
