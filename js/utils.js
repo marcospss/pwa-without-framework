@@ -1,4 +1,6 @@
 const content = document.querySelector('[data-content="container"]');
+// const recommendations = document.querySelector('[data-content="recommendations"]');
+// const similar = document.querySelector('[data-content="similar"]');
 const loadingWrapper = document.querySelector('[data-content="loading"]');
 
 const loading = () => (`
@@ -30,8 +32,5 @@ const createCard = (data) => {
             </div>
         </div>
     `
-    loadingWrapper.remove();
     content.innerHTML += card;
 }
-
-const createList = (data) => data && data.forEach(item => createCard(item));

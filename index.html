@@ -31,12 +31,19 @@
     </nav>
   </div>
   <div class="container mt-40">
-    <div class="row" data-content="container">
-      <div class="container-animation" data-content="loading">
-        <div class="loader"></div>
+    <div class="row" data-content="container"></div>
+    <div class="row">
+      <div class="col s12 text-center">
+        <button data-trigger="btn-load-more" type="button" class="btn-action">
+          Load More
+        </button>
       </div>
-      <!--  -->
     </div>
+    <!-- LOADING -->
+    <div class="container-animation" data-content="loading">
+      <div class="loader"></div>
+    </div>
+    <!--/LOADING -->
     <!-- BANNER INSTALL -->
     <!-- <div class="floating-button">
       <button class="btn-floating btn-large waves-effect waves-light grey darken-4 z-depth-3" id="share-image-button">
@@ -50,27 +57,7 @@
   <script src="/js/utils.js"></script>
   <script src="/settings/api.js"></script>
   <script src="/services/movies.js"></script>
-  <script>
-    let nowPlayingList = [];
-    let nextPage = 1;
-    let hasError = false;
-    let messageError = null;
-    window.addEventListener('load', () => {
-      (async () => {
-        try {
-          const response = await nowPlaying();
-            nowPlayingList = response && response.results;
-            nextPage += parseInt(response.page, 10);
-            hasError = false;
-            messageError = null;
-            createList(nowPlayingList);
-        } catch (error) {
-          hasError = true;
-          messageError = error;
-        }
-      })();
-    });
-  </script>
+  <script src="/js/home.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,17 @@
 .text-center {
   text-align: center;
 }
+.btn-action {
+  margin: 1rem auto;
+  width: 300px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  outline: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 /*
 # NAV
 */
@@ -157,7 +168,7 @@ nav .brand-logo {
 .container-animation {
   width: 100%;
   height: 100vh;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -165,6 +176,7 @@ nav .brand-logo {
   top: 0;
   left: 0;
   background: #00000045;
+  z-index: 9;
 }
 
 .container-animation .loader {
