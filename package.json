@@ -1,0 +1,19 @@
+{
+  "name": "pwa-without-framework",
+  "version": "1.0.0",
+  "description": "pwa-without-framework",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "keywords": [
+    "pwa",
+    "progressive",
+    "web",
+    "app"
+  ],
+  "author": "marcospss",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  }
+}
