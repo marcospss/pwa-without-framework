@@ -12,6 +12,9 @@
 .text-center {
   text-align: center;
 }
+.text-right {
+  text-align: right;
+}
 .activator.image-not-found {
   height: 165px !important;
 }
@@ -19,12 +22,23 @@
 .wrapper-image img[data-src] {
   filter: blur(0.2em);
 }
-
 .wrapper-image img {
   filter: blur(0em);
   transition: filter 0.5s;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 0;
+}
 /* .image-not-found:before { 
   content: " ";
   display: block;

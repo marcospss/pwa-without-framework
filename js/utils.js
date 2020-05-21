@@ -21,7 +21,7 @@ const createCard = (data) => {
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">${ title }<i
                     class="material-icons right">more_vert</i></span>
-                <p><a href="/details.html?id=${ id }">Read more</a></p>
+                <p class="text-right"><a href="/details.html?id=${ id }" class="btn-small waves-effect waves-light grey darken-4">Read more<i class="material-icons right">navigate_next</i></a></p>
             </div>
             <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4">
