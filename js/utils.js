@@ -15,8 +15,8 @@ const createCard = (data) => {
     const card = `
         <div class="col s12 m6 l4" data-id="${ id }">
             <div class="card hoverable">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator ${(!backdrop_path) ? 'image-not-found' : ''}" src="${ backdropPath }" alt="${ title }" />
+            <div class="wrapper-image card-image waves-effect waves-block waves-light">
+                <img class="activator ${(!backdrop_path) ? 'image-not-found' : ''}" src="/images/not-found.png" data-src="${ backdropPath }" alt="${ title }" />
             </div>
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">${ title }<i
@@ -35,3 +35,33 @@ const createCard = (data) => {
     `
     content.innerHTML += card;
 }
+
+/**
+ * Progressive loading images
+ */
+// const imagesToLoad = document.querySelectorAll('img[data-src]');
+const loadImages = function(image) {
+	image.setAttribute('src', image.getAttribute('data-src'));
+	image.onload = function() {
+		image.removeAttribute('data-src');
+	};
+};
+
+// if('IntersectionObserver' in window) {
+// 	let observer = new IntersectionObserver(function(items, observer) {
+// 		items.forEach(function(item) {
+// 			if(item.isIntersecting) {
+// 				loadImages(item.target);
+// 				observer.unobserve(item.target);
+// 			}
+// 		});
+// 	});
+// 	imagesToLoad.forEach(function(img) {
+// 		observer.observe(img);
+// 	});
+// }
+// else {
+// 	imagesToLoad.forEach(function(img) {
+// 		loadImages(img);
+// 	});
+// }

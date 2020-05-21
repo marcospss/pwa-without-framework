@@ -17,8 +17,16 @@ const STATIC_FILES = [
   '/js/home.js',
   '/css/styles.css',
   '/css/materialize.min.css',
-  '/images/not-found.png',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
+  '/images/not-found.png',
+  '/images/icons/icon-72x72.png',
+  '/images/icons/icon-96x96.png',
+  '/images/icons/icon-128x128.png',
+  '/images/icons/icon-144x144.png',
+  '/images/icons/icon-152x152.png',
+  '/images/icons/icon-192x192.png',
+  '/images/icons/icon-384x384.png',
+  '/images/icons/icon-512x512.png',
 ];
 
 self.addEventListener('install', function (event) {
@@ -52,10 +60,7 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
-        if (response) {
-          return response;
-        } else {
-          return fetch(event.request)
+        return response || fetch(event.request)
             .then(function(res) {
               return caches.open(CACHE_DYNAMIC_NAME)
                 .then(function(cache) {
@@ -69,7 +74,6 @@ self.addEventListener('fetch', function(event) {
                   return cache.match('/offline.html');
                 });
             });
-        }
       })
   );
 });
