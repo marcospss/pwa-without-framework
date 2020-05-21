@@ -17,6 +17,7 @@ const STATIC_FILES = [
   '/js/home.js',
   '/css/styles.css',
   '/css/materialize.min.css',
+  '/images/not-found.png',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
 ];
 
