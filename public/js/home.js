@@ -1,6 +1,7 @@
 let nowPlayingList = [];
 let nextPage = 1;
 
+const initialContent = document.querySelector('[data-initial="logo"]');
 const createList = (data) => data && data.forEach((item) => createCard(item));
 const loadMoreButton = document.querySelector('[data-trigger="btn-load-more"]');
 const toastHTMLError = '<span>An error has occurred. Try again later.</span><button class="btn-flat toast-action">Ok</button>';
@@ -13,9 +14,9 @@ const loadNowPlaying = async () => {
     nowPlayingList = response && response.results;
     totalPages = parseInt(response.total_pages, 10);
     nextPage = parseInt(response.page, 10) + 1;
+    initialContent.remove();
     createList(nowPlayingList);
     loadingWrapper.style.display = 'none';
-
     if (nextPage > totalPages) {
       loadMoreButton.style.display = 'none';
     }
