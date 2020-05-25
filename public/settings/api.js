@@ -1,6 +1,6 @@
 const API = {
   baseUrl: 'https://api.themoviedb.org/3',
-  apiKey: '--YOUR-KEY',
+  apiKey: '--YOUR-KEY--',
   language: 'en-US',
 };
 
