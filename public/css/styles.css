@@ -46,6 +46,12 @@
 [data-content="btn-load-more"] {
   display: none;
 }
+.breadcrumb {
+  color: #000 !important;
+}
+.breadcrumb:before {
+  color: #000 !important;
+}
 /* .image-not-found:before { 
   content: " ";
   display: block;
