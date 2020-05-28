@@ -76,6 +76,10 @@ nav .brand-logo {
 /*
 # DETAILS
 */
+[data-content="details"] {
+  display: none;
+}
+
 .details {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -116,6 +120,9 @@ nav .brand-logo {
 /*
 # RECOMMENDATIONS
 */
+[data-content="recommendations"] {
+  display: none;
+}
 .recommendations {
   margin-bottom: 40px;
   padding: 1rem 1.5rem;

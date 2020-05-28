@@ -46,102 +46,35 @@
     </nav>
   </div>
     <!-- DETAILS -->
-    <article id="maincontent" class="details container mt-40 grey lighten-5">
-        <nav class="grey z-depth-3">
-            <div class="nav-wrapper ml-40">
-                <div class="col s12">
-                <a href="/" class="breadcrumb">Home</a>
-                <a href="/discover.html" class="breadcrumb">Discover</a>
-                <span class="breadcrumb">Justice League Dark: Apokolips War</span>
-                </div>
-            </div>
-        </nav>
-        <section class="row">
-            <header class="col s12 header">
-                <figure>
-                    <img src="https://image.tmdb.org/t/p/w780/sQkRiQo3nLrQYMXZodDjNUJKHZV.jpg" alt="Justice League Dark: Apokolips War" />
-                </figure>
-                <h1 class="title">Justice League Dark: Apokolips War</h1>
-            </header>
-        </section>
-        <section class="row description">
-            <div class="col s12">
-                <p>Earth is decimated after intergalactic tyrant Darkseid has devastated the Justice League in a poorly executed war by the DC Super Heroes. Now the remaining bastions of good – the Justice League, Teen Titans, Suicide Squad and assorted others – must regroup, strategize and take the war to Darkseid in order to save the planet and its surviving inhabitants.</p>
-            </div>
-        </section>
-    </article>
+    <article id="maincontent" class="details container mt-40 grey lighten-5" data-content="details"></article>
     <!--/DETAILS-->
     <!--RECOMMENDATIONS-->
-    <div class="container recommendations grey lighten-5">
+    <div class="container recommendations grey lighten-5" data-content="recommendations">
         <hr class="col s12">
         <div class="row">
             <h2 class="col s12 title">Recommendations</h2>
         </div>
+        <div class="row" data-content="recommendations-list"></div>
         <div class="row">
-            <div class="col s12 m6 l3">
-                <div class="card hoverable">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://image.tmdb.org/t/p/w300/eevJuYAitUe6VwFN29aFwzeyeTr.jpg" alt="Batman: Hush" />
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Batman: Hush<i class="material-icons right">more_vert</i></span>
-                      <p><a href="/details.html?id=537056">Read more</a></p>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Batman: Hush<i class="material-icons right">close</i></span>
-                      <p>A mysterious new villain known only as Hush uses a gallery of villains to destroy Batman's crime-fighting career as well as Bruce Wayne's personal life, which has been further complicated by a relationship with Selina Kyle/Catwoman.</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card hoverable">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://image.tmdb.org/t/p/w300/eevJuYAitUe6VwFN29aFwzeyeTr.jpg" alt="Batman: Hush" />
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Batman: Hush<i class="material-icons right">more_vert</i></span>
-                      <p><a href="/details.html?id=537056">Read more</a></p>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Batman: Hush<i class="material-icons right">close</i></span>
-                      <p>A mysterious new villain known only as Hush uses a gallery of villains to destroy Batman's crime-fighting career as well as Bruce Wayne's personal life, which has been further complicated by a relationship with Selina Kyle/Catwoman.</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card hoverable">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://image.tmdb.org/t/p/w300/eevJuYAitUe6VwFN29aFwzeyeTr.jpg" alt="Batman: Hush" />
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Batman: Hush<i class="material-icons right">more_vert</i></span>
-                      <p><a href="/details.html?id=537056">Read more</a></p>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Batman: Hush<i class="material-icons right">close</i></span>
-                      <p>A mysterious new villain known only as Hush uses a gallery of villains to destroy Batman's crime-fighting career as well as Bruce Wayne's personal life, which has been further complicated by a relationship with Selina Kyle/Catwoman.</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="col s12 m6 l3">
-                <div class="card hoverable">
-                    <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator" src="https://image.tmdb.org/t/p/w300/eevJuYAitUe6VwFN29aFwzeyeTr.jpg" alt="Batman: Hush" />
-                    </div>
-                    <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Batman: Hush<i class="material-icons right">more_vert</i></span>
-                      <p><a href="/details.html?id=537056">Read more</a></p>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Batman: Hush<i class="material-icons right">close</i></span>
-                      <p>A mysterious new villain known only as Hush uses a gallery of villains to destroy Batman's crime-fighting career as well as Bruce Wayne's personal life, which has been further complicated by a relationship with Selina Kyle/Catwoman.</p>
-                    </div>
-                  </div>
-            </div>
+          <div class="col s12 text-center">
+            <button data-trigger="btn-load-more" type="button" class="btn-small waves-effect waves-light grey darken-4 z-depth-3">
+              <i class="material-icons left">add</i>
+              Load More
+            </button>
+          </div>
         </div>
     </div>
     <!--/RECOMMENDATIONS-->
+    <!-- LOADING -->
+    <div class="container-animation" data-content="loading">
+      <div class="loader"></div>
+    </div>
+    <!--/LOADING -->
     <script defer src="/js/materialize.min.js"></script>
     <script defer src="/js/app.js"></script>
+    <script defer src="/js/utils.js"></script>
+    <script defer src="/settings/api.js"></script>
+    <script defer src="/services/movies.js"></script>
+    <script defer src="/js/details.js"></script>
 </body>
 </html>
