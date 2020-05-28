@@ -16,7 +16,6 @@ const renderDetails = (data) => {
             <div class="nav-wrapper ml-40">
                 <div class="col s12">
                 <a href="/" class="breadcrumb">Home</a>
-                <a href="/discover.html" class="breadcrumb">Discover</a>
                 <span class="breadcrumb" data-content="breadcrumb">${ title }</span>
                 </div>
             </div>
