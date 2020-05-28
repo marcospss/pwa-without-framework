@@ -74,6 +74,7 @@ const loadRecommendations = async () => {
     nextPage = parseInt(responseRecommendations.page, 10) + 1;
     recommendationsListResults.innerHTML += createRecommendationsList(recommendationsList);
     loadingWrapper.style.display = 'none';
+    buttonLoadMoreWrapper.style.display = 'block';
     lazyLoadingImages();
 
     if (nextPage > totalPages) {

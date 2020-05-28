@@ -20,6 +20,7 @@ const STATIC_FILES = [
   'https://fonts.googleapis.com/icon?family=Material+Icons',
   'https://fonts.gstatic.com/s/materialicons/v50/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2',
   '/icon.png',
+  '/images/logo-the-movie-database.svg',
   '/images/not-found.png',
   '/images/icons/icon-16x16.png',
   '/images/icons/icon-20x20.png',

@@ -46,7 +46,11 @@
     </nav>
   </div>
     <!-- DETAILS -->
-    <article id="maincontent" class="details container mt-40 grey lighten-5" data-content="details"></article>
+    <article id="maincontent" class="details container mt-40 grey lighten-5" data-content="details">
+      <figure class="center-align" data-initial="logo">
+        <img src="/images/logo-the-movie-database.svg" alt="Powered by The Movie DB" />
+      </figure>
+    </article>
     <!--/DETAILS-->
     <!--RECOMMENDATIONS-->
     <div class="container recommendations grey lighten-5" data-content="recommendations">
@@ -55,7 +59,7 @@
             <h2 class="col s12 title">Recommendations</h2>
         </div>
         <div class="row" data-content="recommendations-list"></div>
-        <div class="row">
+        <div class="row" data-content="btn-load-more">
           <div class="col s12 text-center">
             <button data-trigger="btn-load-more" type="button" class="btn-small waves-effect waves-light grey darken-4 z-depth-3">
               <i class="material-icons left">add</i>

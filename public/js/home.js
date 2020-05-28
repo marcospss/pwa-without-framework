@@ -18,8 +18,9 @@ const loadNowPlaying = async () => {
     initialContent.remove();
     nowPlayingContent.innerHTML += createNowPlayingList(nowPlayingList);
     loadingWrapper.style.display = 'none';
+    buttonLoadMoreWrapper.style.display = 'block';
     lazyLoadingImages();
-    
+
     if (nextPage > totalPages) {
       loadMoreButton.style.display = 'none';
     }

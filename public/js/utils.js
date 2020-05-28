@@ -2,6 +2,7 @@
 // const recommendations = document.querySelector('[data-content="recommendations"]');
 // const similar = document.querySelector('[data-content="similar"]');
 const loadingWrapper = document.querySelector('[data-content="loading"]');
+const buttonLoadMoreWrapper = document.querySelector('[data-content="btn-load-more"]');
 
 const loading = () => `
     <div class="container-animation">
@@ -43,9 +44,9 @@ const createCard = (data) => {
 /**
  * Lazy Loading Images
  */
-const loadImages = function (image) {
+const loadImages = (image) => {
   image.setAttribute("src", image.getAttribute("data-src"));
-  image.onload = function () {
+  image.onload = () => {
     image.removeAttribute("data-src");
   };
 };
@@ -54,20 +55,20 @@ const lazyLoadingImages = () => {
   let imagesToLoad = [];
   imagesToLoad = document.querySelectorAll('img[data-src]');
   if('IntersectionObserver' in window) {
-    let observer = new IntersectionObserver(function(items, observer) {
-      items.forEach(function(item) {
+    let observer = new IntersectionObserver((items, observer) => {
+      items.forEach((item) => {
         if(item.isIntersecting) {
           loadImages(item.target);
           observer.unobserve(item.target);
         }
       });
     });
-    imagesToLoad.forEach(function(img) {
+    imagesToLoad.forEach((img) => {
       observer.observe(img);
     });
   }
   else {
-    imagesToLoad.forEach(function(img) {
+    imagesToLoad.forEach((img) => {
       loadImages(img);
     });
   }
