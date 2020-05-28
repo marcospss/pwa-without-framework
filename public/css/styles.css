@@ -88,9 +88,9 @@ nav .brand-logo {
 }
 
 .details {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-radius: 1rem;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 .details .header {
   padding: 0;
@@ -133,8 +133,7 @@ nav .brand-logo {
 .recommendations {
   margin-bottom: 40px;
   padding: 1rem 1.5rem;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-radius: 1rem;
   overflow: hidden;
 }
 
